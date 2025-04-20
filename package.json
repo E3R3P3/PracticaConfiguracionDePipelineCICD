@@ -1,9 +1,10 @@
 {
   "name": "practicaconfiguraciondepipelinecicd",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:unit": "jest tests/unit.test.js", 
+    "coverage": "jest --coverage"
   },
   "keywords": [],
   "author": "",
