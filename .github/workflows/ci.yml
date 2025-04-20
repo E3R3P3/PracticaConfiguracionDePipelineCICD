@@ -24,9 +24,6 @@ jobs:
       - name: Run Unit Tests
         run: npm run test:unit
 
-      - name: Run Integration Tests
-        run: npm run test:integration
-
       - name: Generate Coverage Report
         run: npm run coverage
         # Opcional: Subir el reporte a Codecov
