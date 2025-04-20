@@ -1,7 +1,7 @@
 name: CI/CD Pipeline
 
 on:
-  push:
+  push:    # ✅ Nivel correcto
     branches: [main]
   pull_request:
     branches: [main]
@@ -32,6 +32,10 @@ jobs:
         # Opcional: Subir el reporte a Codecov
         # env:
         #   CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      - name: Upload Coverage to Codecov
+        run: |
+          npm install -g codecov
+          codecov --token=${{ secrets.CODECOV_TOKEN }}
 
   deploy:
     needs: build-and-test
