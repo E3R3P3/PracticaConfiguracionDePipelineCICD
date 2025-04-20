@@ -1,0 +1,42 @@
+# Dependencias de Node.js
+node_modules/
+.npm
+.yarn/
+package-lock.json
+yarn.lock
+
+# Cobertura de código y reportes
+coverage/
+.nyc_output/
+
+# Variables de entorno
+.env
+.env.local
+.env.development
+.env.production
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs y caché
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.cache/
+
+# Carpeta de despliegue automático (gh-pages)
+dist/
+build/
+out/
+public/
+
+# Archivos generados por el testing
+test-results/
+junit.xml

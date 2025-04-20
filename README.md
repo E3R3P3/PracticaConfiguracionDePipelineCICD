@@ -1,0 +1,1 @@
+[![CI/CD](https://github.com/E3R3P3/tu-repositorio/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/tu-usuario/tu-repositorio/actions)
