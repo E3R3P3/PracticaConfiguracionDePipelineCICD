@@ -1,7 +1,7 @@
 name: CI/CD Pipeline
 
 on:
-  push:    # ✅ Nivel correcto
+  push:
     branches: [main]
   pull_request:
     branches: [main]
@@ -26,10 +26,8 @@ jobs:
 
       - name: Generate Coverage Report
         run: npm run coverage
-        # Opcional: Subir el reporte a Codecov
-        # env:
-        #   CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-      - name: Upload Coverage to Codecov
+
+      - name: Upload Coverage to Codecov  # ✅ Paso independiente
         run: |
           npm install -g codecov
           codecov --token=${{ secrets.CODECOV_TOKEN }}
@@ -38,6 +36,8 @@ jobs:
     needs: build-and-test
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
+    permissions:  # 🔑 Permisos para escribir en la rama gh-pages
+      contents: write
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -46,4 +46,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./src  # Carpeta con los archivos estáticos
+          publish_dir: ./src
